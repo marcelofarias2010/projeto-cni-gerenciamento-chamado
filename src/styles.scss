@@ -56,3 +56,30 @@ h1, h2, h3 {
     color: #003B73; /* Títulos no azul institucional */
     font-weight: 700;
 }
+/* Melhora a visualização Stack (Mobile) da Tabela */
+@media screen and (max-width: 960px) {
+    .p-datatable.p-datatable-striped .p-datatable-tbody > tr > td {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem;
+        border: none;
+    }
+    
+    /* Adiciona uma borda entre os "cards" de chamados no mobile */
+    .p-datatable .p-datatable-tbody > tr {
+        border-bottom: 2px solid var(--surface-border);
+        display: block;
+        margin-bottom: 1rem; /* Espaço entre chamados */
+        background: var(--surface-card);
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    /* Esconde o cabeçalho original da tabela no mobile */
+    .p-datatable .p-datatable-thead > tr > th,
+    .p-datatable .p-datatable-tfoot > tr > td {
+        display: none !important;
+    }
+}

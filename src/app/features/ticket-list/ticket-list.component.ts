@@ -12,34 +12,45 @@ import { Observable } from 'rxjs';
   standalone: true,
   imports: [CommonModule, TableModule, ButtonModule, RouterModule],
   template: `
-    <div class="card p-4">
-      <div class="flex justify-content-between align-items-center mb-4">
-        <h2>Meus Chamados</h2>
-        <p-button styleClass="p-button-info" label="Novo Chamado" icon="pi pi-plus" routerLink="/create"></p-button>
+    <div class="card fadein animation-duration-500">
+      <div class="flex flex-column md:flex-row justify-content-between align-items-start md:align-items-center mb-4 gap-3">
+        <h2 class="m-0 text-primary-700">Meus Chamados</h2>
+        <p-button 
+            label="Novo Chamado" 
+            icon="pi pi-plus" 
+            routerLink="/create" 
+            styleClass="p-button-primary w-full md:w-auto"> </p-button>
       </div>
 
-      <p-table styleClass="p-datatable-striped p-datatable-sm shadow-2 border-round" [value]="(tickets$ | async)!" [tableStyle]="{ 'min-width': '50rem' }" responsiveLayout="scroll">
+      <p-table 
+          [value]="(tickets$ | async)!" 
+          [breakpoint]="'960px'"
+          responsiveLayout="stack" 
+          styleClass="p-datatable-striped shadow-2 border-round surface-card">
+        
         <ng-template pTemplate="header">
           <tr>
-            <th>ID</th>
-            <th>Título</th>
-            <th>Categoria</th>
-            <th>Descrição</th>
+            <th class="w-1">ID</th> <th class="w-3">Título</th>
+            <th class="w-2">Categoria</th>
+            <th class="w-6">Descrição</th>
           </tr>
         </ng-template>
+        
         <ng-template pTemplate="body" let-ticket>
           <tr>
-            <td>{{ ticket.id }}</td>
-            <td class="font-bold">{{ ticket.title }}</td>
+            <td><span class="p-column-title font-bold">ID</span>{{ ticket.id }}</td>
+            <td><span class="p-column-title font-bold">Título</span><span class="font-bold">{{ ticket.title }}</span></td>
             <td>
-              <span class="p-tag p-tag-info">{{ ticket.category }}</span>
+              <span class="p-column-title font-bold">Categoria</span>
+              <span class="p-tag p-tag-info text-sm">{{ ticket.category }}</span>
             </td>
-            <td>{{ ticket.description }}</td>
+            <td><span class="p-column-title font-bold">Descrição</span>{{ ticket.description }}</td>
           </tr>
         </ng-template>
+
         <ng-template pTemplate="emptymessage">
             <tr>
-                <td colspan="4">Nenhum chamado encontrado.</td>
+                <td colspan="4" class="text-center p-4">Nenhum chamado encontrado.</td>
             </tr>
         </ng-template>
       </p-table>

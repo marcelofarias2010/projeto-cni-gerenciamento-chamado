@@ -40,17 +40,7 @@ import { TicketService } from '../../core/services/ticket.service';
             <input pInputText id="title" formControlName="title" placeholder="Resumo do problema" />
             <small class="p-error" *ngIf="isFieldInvalid('title')">Título é obrigatório.</small>
           </div>
-
-          <div class="flex flex-column gap-2">
-            <label for="category">Categoria</label>
-            <p-dropdown 
-              [options]="categories" 
-              formControlName="category" 
-              placeholder="Selecione uma categoria"
-              [style]="{'width':'100%'}">
-            </p-dropdown>
-          </div>
-
+        
           <div class="flex flex-column gap-2">
             <label for="description">Descrição</label>
             <textarea 
@@ -61,6 +51,16 @@ import { TicketService } from '../../core/services/ticket.service';
               class="w-full">
             </textarea>
             <small class="p-error" *ngIf="isFieldInvalid('description')">Descrição é obrigatória.</small>
+          </div>
+
+          <div class="flex flex-column gap-2">
+            <label for="category">Categoria</label>
+            <p-dropdown 
+              [options]="categories" 
+              formControlName="category" 
+              placeholder="Selecione uma categoria"
+              [style]="{'width':'100%'}">
+            </p-dropdown>
           </div>
 
           <div class="flex justify-content-between mt-3">
