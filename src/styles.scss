@@ -95,3 +95,21 @@ h1, h2, h3 {
 .p-button.p-button-text[icon="pi pi-bars"] .p-button-icon {
     font-size: 1.5rem;
 }
+
+/* Ajuste do Toast (Notificação) */
+.p-toast {
+    /* Garante que fique acima do Header (que tem z-index: 2) */
+    z-index: 9999 !important; 
+    
+    /* Empurra a notificação para baixo para não tapar o menu */
+    top: 90px !important; 
+}
+
+/* Opcional: Ajuste para mobile para não ocupar a tela toda */
+@media screen and (max-width: 960px) {
+    .p-toast {
+        top: 70px !important; /* Um pouco mais alto no mobile pois o header é menor */
+        width: 90% !important; /* Margem lateral no mobile */
+        left: 5% !important;
+    }
+}

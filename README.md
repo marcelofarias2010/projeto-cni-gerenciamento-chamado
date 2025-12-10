@@ -25,6 +25,8 @@ Aplicação web para visualização e cadastro de chamados de serviço.
 * **Layout**: Ajustei o conteúdo deixando centralizado com o fundo cinza claro (obtido pela IA), dando destaque ao "cartão" branco do conteúdo, criando um efeito de profundidade profissional.
 * **Menu responsivo**: Realizei um ajuste no `app.component.ts` adicionando o botão do icone hambúrguer (visível apenas em telas pequenas) e criando um novo container para os links na versão móvel (que aparecerá quando o botão for clicado).
 * **Style**: Adicionei os estilos de responsividade no arquivo styles.scss garantindo que as colres e ajustes fossem aplicados nas páginas relacionadas. 
+* **Notificação**: Ajustando o CSS global para baixar a notificação e forçar que ela fique sempre na frente do cabeçalho.
+
 ## Percentual de código gerado por IA
 * **Estilo**: uso de 70% entre cores e tipografia; 
 * **Arquitetura**: A organização da arquitetura como os diretórios core (models, services) e features (ticket-form e ticket-list) foi 100% orientado pelo Gemini. 
