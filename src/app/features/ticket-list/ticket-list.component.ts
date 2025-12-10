@@ -15,10 +15,10 @@ import { Observable } from 'rxjs';
     <div class="card p-4">
       <div class="flex justify-content-between align-items-center mb-4">
         <h2>Meus Chamados</h2>
-        <p-button label="Novo Chamado" icon="pi pi-plus" routerLink="/create"></p-button>
+        <p-button styleClass="p-button-info" label="Novo Chamado" icon="pi pi-plus" routerLink="/create"></p-button>
       </div>
 
-      <p-table [value]="(tickets$ | async)!" [tableStyle]="{ 'min-width': '50rem' }" responsiveLayout="scroll">
+      <p-table styleClass="p-datatable-striped p-datatable-sm shadow-2 border-round" [value]="(tickets$ | async)!" [tableStyle]="{ 'min-width': '50rem' }" responsiveLayout="scroll">
         <ng-template pTemplate="header">
           <tr>
             <th>ID</th>

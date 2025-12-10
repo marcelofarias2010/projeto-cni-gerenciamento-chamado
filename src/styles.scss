@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+/* Importações necessárias (caso não tenham carregado via angular.json) */
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+
+/* === RESET E FONTE GLOBAL === */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Fonte moderna similar à da CNI */
+    background-color: #F4F6F9; /* Fundo cinza suave */
+    color: #333333;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* === SOBRESCREVENDO VARIÁVEIS DO PRIMENG === */
+/* Isso muda a cor de TODOS os componentes (botões, inputs, checkbox) automaticamente */
+:root {
+    /* Cor Primária (Azul CNI Vibrante - usado em botões ativos e focos) */
+    --primary-color: #009FE3; 
+    --primary-color-text: #ffffff;
+    
+    /* Ajustes de superfície */
+    --surface-ground: #F4F6F9;
+    --surface-card: #ffffff;
+    
+    /* Bordas e arredondamento (para ficar mais quadrado/profissional igual CNI) */
+    --border-radius: 4px; 
+}
+
+/* === CLASSES UTILITÁRIAS PERSONALIZADAS (Tema CNI) === */
+
+/* Header Azul Escuro */
+.cni-header {
+    background-color: #003B73;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cni-footer {
+    background-color: #00254F; /* Um tom ainda mais escuro para o rodapé */
+    color: white;
+    padding: 2rem 1rem;
+    margin-top: auto; /* Empurra o footer para baixo */
+}
+
+/* Ajuste específico para botões para ficarem iguais ao "Entenda o fórum" */
+.p-button {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Ajuste para Títulos */
+h1, h2, h3 {
+    color: #003B73; /* Títulos no azul institucional */
+    font-weight: 700;
+}
